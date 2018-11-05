@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+   <body>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Key</th>
+          <th>DatasetKey</th>
+          <th>PublishingCountry</th>
+          <th>protocol</th>
+          <th>lifeStage</th>
+        </tr>
+        {% for item in result %}
+        <tr>
+          <td> {{ item.get('_id') }} </td>
+          <td> {{ item.get('_source').get('key') }}</td>
+          <td> {{ item.get('_source').get('datasetKey') }}</td>
+          <td> {{ item.get('_source').get('publishingCountry') }}</td>
+          <td> {{ item.get('_source').get('protocol') }}</td>
+          <td> {{ item.get('_source').get('lifeStage') }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+   </body>
+</html>
