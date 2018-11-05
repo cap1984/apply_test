@@ -5,7 +5,7 @@ How to run:
 ```
 git clone https://github.com/cap1984/apply_test.git
 
-cd startup
+cd apply_test/startup
 vagrant up
 ```
 
